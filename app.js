@@ -22,13 +22,18 @@ function calculateProfitAndLoss(initial, stock, current) {
         const loss = (initial-current) * stock;
         const lossPercentage = (loss/ initial) * 100;
 
-        showingMessage(`Your Loss amount is ${loss} and loss percentage is ${lossPercentage}%`);
+        const fixedLoss = lossPercentage.toFixed(2);
+
+        showingMessage(`Your Loss amount is ${loss} and loss percentage is ${fixedLoss}%`);
     } else if(current > initial){
 
         const profit = (current-initial) * stock;
         const profitPercentage = (profit/ initial) * 100;
+
+        const fixedProfit = profitPercentage.toFixed(2);
+       
         
-        showingMessage(`Your Profit amount is ${profit} and profit percentage is ${profitPercentage}%`);
+        showingMessage(`Your Profit amount is ${profit} and profit percentage is ${fixedProfit}%`);
     }else{
 
         showingMessage("You have got nothing in loss or profit. ");
